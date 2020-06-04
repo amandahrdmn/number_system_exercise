@@ -32,7 +32,7 @@ class UsersController extends Controller
         print("<pre>".print_r($converted_array,true)."</pre></br>");
 
         foreach ($converted_array as $user) {
-            $this->userModel->convertIdNumbers($user);
+            $this->userModel->addConvertedIdNumber($user);
         }
         return $response;
     }

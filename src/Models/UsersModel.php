@@ -26,10 +26,10 @@ class UsersModel implements \App\Interfaces\UserModelInterface
         return $user_query->fetchAll();
     }
 
-    public function convertIdNumbers($user) {
+    public function updateNewIdNumber($user) {
         $user_query = $this->db->prepare("UPDATE `users` SET `new_id`= :new_id WHERE `id`=:id");
         $user_query->execute($user);
 
-        return $user_query->fetchAll();
+        return $user_query;
     }
 }
