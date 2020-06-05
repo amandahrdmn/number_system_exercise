@@ -33,5 +33,11 @@ return function (ContainerBuilder $containerBuilder) {
         return $renderer;
     };
 
+    $container['DBUtility'] = new App\Utilities\DBConnectionUtility();
+
+    $container['UserModel'] = DI\factory('App\Factories\UsersModelFactory');
+
+    $container['UsersController'] = DI\factory('App\Factories\UserControllerFactory');
+
     $containerBuilder->addDefinitions($container);
 };
